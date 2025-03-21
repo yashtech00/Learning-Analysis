@@ -13,8 +13,22 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'example.com',
+        hostname: 'c8.alamy.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'w7.pngwing.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'as2.ftcdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.vecteezy.com',
       }
+      
+      
     ]
   }
 };
