@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'media.licdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'example.com',
       }
     ]
   }
