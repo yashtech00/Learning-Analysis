@@ -1,14 +1,12 @@
-import { MainBody } from "./MainBody";
-import { NavBar } from "./NavBar";
-import { Sidebar } from "./SideBar";
+
+import { SideNav } from "./SidewithNavBar";
 
 
 export function  DashboardPage() {
     return (
         <div>
-        <NavBar />
-        <Sidebar/>
-            <MainBody />
+       
+            <SideNav/>
             </div>
     )
 }
