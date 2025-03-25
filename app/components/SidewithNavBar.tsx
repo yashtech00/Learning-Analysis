@@ -47,7 +47,7 @@ export function SideNav() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="#" className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100  group">
+                            <Link href="/Internship" className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100  group">
                                 <StickyNote />
                                 <span className="ms-3">Internship</span>
                             </Link>

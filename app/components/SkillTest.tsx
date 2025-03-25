@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   PieChart,
   Pie,
@@ -35,24 +35,29 @@ export function SkillTest() {
   const [questionAnalysisData, setQuestionAnalysisData] = useState(initialQuestionAnalysisData)
   const [comparisonData, setComparisonData] = useState(initialComparisonData)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const totalQuestions = 15;
+  useEffect(() => {  
+    const correctAnswers = Number.parseInt(score);  
+    if (!isNaN(correctAnswers)) {  
+      setQuestionAnalysisData([  
+        { name: "Correct", value: correctAnswers, color: "#4CAF50" },  
+        { name: "Incorrect", value: totalQuestions - correctAnswers, color: "#FF5252" },  
+      ]);  
 
-    const correctAnswers = Number.parseInt(score)
-    const totalQuestions = 15
-    setQuestionAnalysisData([
-      { name: "Correct", value: correctAnswers, color: "#4CAF50" },
-      { name: "Incorrect", value: totalQuestions - correctAnswers, color: "#FF5252" },
-    ])
+      setComparisonData([  
+        { name: "Your Score", score: (correctAnswers / totalQuestions) * 100 },  
+        { name: "Average", score: 55 },  
+        { name: "Top Score", score: 85 },  
+      ]);      
+    }  
+  }, [score]); // This effect runs whenever 'score' changes  
 
-    setComparisonData([
-      { name: "Your Score", score: (correctAnswers / totalQuestions) * 100 },
-      { name: "Average", score: 55 },
-      { name: "Top Score", score: 85 },
-    ])
+  const handleSubmit = (e: React.FormEvent) => {  
+    e.preventDefault();  
+    setIsModalOpen(false);  
+  };  
 
-    setIsModalOpen(false)
-  }
+  
 
   return (
     <div className="p-4 sm:ml-64">
